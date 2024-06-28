@@ -14,7 +14,7 @@
 
   MindEase - Innovative Mental Health <br />Chatbot: Powered by IBM WatsonX and AI Technology.<br />
 
-  <a href="#"><strong>➥ Live Demo</strong></a>
+  <a href="https://master--mindace.netlify.app/"><strong>➥ Live Demo</strong></a>
 
 </div>
 
