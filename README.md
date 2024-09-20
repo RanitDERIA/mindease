@@ -27,7 +27,7 @@
 
 ### Demo Screenshots:
 
-![MindEase Desktop Demo](./readme-images/Fully.png "Desktop Demo")
+![MindEase Desktop Demo](./readme-images/desk.png "Desktop Demo")
 
 ### Prerequisites:
 
