@@ -4,7 +4,7 @@
   ![GitHub stars](https://img.shields.io/github/stars/ranitderia/mindease?style=social)
   ![GitHub forks](https://img.shields.io/github/forks/ranitderia/mindease?style=social)
   [![Twitter Follow](https://img.shields.io/twitter/follow/DeriaRanit?style=social)](https://twitter.com/intent/follow?screen_name=DeriaRanit)
-  [![Twitter Follow](https://img.shields.io/twitter/follow/DeriaRanit?style=social)](https://x.com/me0Prabhat)
+  [![Twitter Follow](https://img.shields.io/twitter/follow/me0Prabhat?style=social)](https://x.com/me0Prabhat)
 
   <br />
   <br />
