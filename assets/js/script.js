@@ -33,7 +33,7 @@ addEventOnElem(navLinks, "click", closeNavbar);
 
 
 
-/**
+/*
  * header & back top btn active
  */
 
