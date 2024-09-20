@@ -1,9 +1,9 @@
 <div align="center">
   
-  ![GitHub repo size](https://img.shields.io/badge/repo_size-20_MB-lime)
+  ![GitHub repo size](https://img.shields.io/badge/repo_size-20_MB-indigo)
   ![GitHub stars](https://img.shields.io/github/stars/ranitderia/mindease?style=social)
   ![GitHub forks](https://img.shields.io/github/forks/ranitderia/mindease?style=social)
-[![Twitter Follow](https://img.shields.io/twitter/follow/DeriaRanit?style=social)](https://twitter.com/intent/follow?screen_name=DeriaRAnit)
+  [![Twitter Follow](https://img.shields.io/twitter/follow/DeriaRanit?style=social)](https://twitter.com/intent/follow?screen_name=DeriaRAnit)
 
   <br />
   <br />
@@ -12,17 +12,21 @@
 
   <h2 align="center">MindEase - Innovative Mental Health Chatbot</h2>
 
-  MindEase - Innovative Mental Health <br />Chatbot: Powered by IBM WatsonX and AI Technology.<br />
+  MindEase - Innovative Mental Health Chatbot: Powered by IBM WatsonX and AI Technology.<br />
+  
+  Developed by <strong>Team THE WIND</strong>.<br />
+  Lead Developer: @RanitDERIA<br />
+  Collaborator: @ItsPrabhatTS
 
-  <a href="https://master--mindace.netlify.app/"><strong>➥ Live Demo</strong></a>
+  <a href="#"><strong>➥ Live Demo</strong></a>
 
 </div>
 
 <br />
 
-### Demo Screeshots:
+### Demo Screenshots:
 
-![ICMR Desktop Demo](./readme-images/Fully.png "Desktop Demo")
+![MindEase Desktop Demo](./readme-images/Fully.png "Desktop Demo")
 
 ### Prerequisites:
 
@@ -30,18 +34,21 @@ Before you begin, ensure you have met the following requirements:
 
 * [Git](https://git-scm.com/downloads "Download Git") must be installed on your operating system.
 
-### Technogies Utilised:
+### Technologies Utilized:
+
+### Technologies Utilized:
 
 <div style="display: inline_block">
-  <img align="center" alt="Bruno-Js" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
-  <img align="center" alt="Bruno-HTML" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
-  <img align="center" alt="Bruno-CSS" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-<img align="center" alt="Bruno-CSS" height="30" width="40" src="readme-images/ibmwatson.svg">
+  <img align="center" alt="JavaScript" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
+  <img align="center" alt="HTML5" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
+  <img align="center" alt="CSS3" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
+  <img align="center" alt="IBM WatsonX" height="30"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/IBM_watsonx_logo.svg/425px-IBM_watsonx_logo.svg.png?20230912210949">
 </div>
+
 
 ### Run Locally:
 
-To run **MindEase - Innovative Mental Health Chatbot** locally, run this command on your git bash:
+To run **MindEase - Innovative Mental Health Chatbot** locally, run this command on your Git Bash:
 
 Linux and macOS:
 
