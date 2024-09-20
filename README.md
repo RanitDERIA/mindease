@@ -15,10 +15,10 @@
   MindEase - Innovative Mental Health Chatbot: Powered by IBM WatsonX and AI Technology.<br />
   
   Developed by <strong>Team THE WIND</strong>.<br />
-  Lead Developer: @RanitDERIA<br />
-  Collaborator: @ItsPrabhatTS
+  Lead Developer: <a href="https://github.com/RanitDERIA"><i>@RanitDERIA</i></a><br />
+  Collaborator: <a href="https://mindace.netlify.app/"><i>@ItsPrabhatTS</i></a>
 
-  <a href="#"><strong>➥ Live Demo</strong></a>
+  <a href="https://mindace.netlify.app/"><strong>➥ Live Demo</strong></a>
 
 </div>
 
