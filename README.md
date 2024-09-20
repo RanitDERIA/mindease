@@ -16,7 +16,7 @@
   
   Developed by <strong>Team THE WIND</strong>.<br />
   Lead Developer: <a href="https://github.com/RanitDERIA"><i>@RanitDERIA</i></a><br />
-  Collaborator: <a href="https://mindace.netlify.app/"><i>@ItsPrabhatTS</i></a>
+  Collaborator: <a href="https://github.com/ItsPrabhaTS"><i>@ItsPrabhatTS</i></a>
 
   <a href="https://mindace.netlify.app/"><strong>➥ Live Demo</strong></a>
 
