@@ -44,7 +44,7 @@ Before you begin, ensure you have met the following requirements:
   <img align="center" alt="JavaScript" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-plain.svg">
   <img align="center" alt="HTML5" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original.svg">
   <img align="center" alt="CSS3" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original.svg">
-  <img align="center" alt="IBM WatsonX" height="30"  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/IBM_watsonx_logo.svg/425px-IBM_watsonx_logo.svg.png?20230912210949">
+  <img align="center" alt="IBM WatsonX" height="30"  src="https://media.licdn.com/dms/image/v2/D4E16AQFwSZCSnA_UdA/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1700628397032?e=2147483647&v=beta&t=IkWWi6jeqbrK4yWlO-V13iUtKs-PbAeJh32DA2HqUus">
 </div>
 
 
