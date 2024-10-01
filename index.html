@@ -25,7 +25,9 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap"
     rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <!-- 
     - preload images
@@ -145,6 +147,17 @@
       </section>
 
 
+      <!-- REMEDY -->
+      <section class="section class bg-dark has-bg-image" id="class" aria-label="class"
+        style="background-image: url('./assets/images/classes-bg.png')">
+        <div class="container">
+          <p class="section-subtitle">Remedy</p><br>
+         <div class="hereby">
+          <div id="loader" class="loader"></div>
+          <div id="content" style="display: none;"></div>
+         </div>
+        </div>
+      </section>
 
 
 
@@ -158,7 +171,14 @@
           <div class="about-banner has-after">
             <img src="./assets/images/about-banner.png" width="660" height="648" loading="lazy" alt="about banner"
               class="w-100">
-
+            <section class="section class bg-dark has-bg-image" id="class" aria-label="class"
+              style="background-image: url('./assets/images/classes-bg.png')">
+              <div class="container">
+                <p class="section-subtitle">Remedy</p>
+                <div id="loader">Loading...</div>
+                <div id="content" style="display: none;"></div>
+              </div>
+            </section>
             <img src="./assets/images/about-circle-one.png" width="660" height="534" loading="lazy" aria-hidden="true"
               alt="" class="circle circle-1">
             <img src="./assets/images/about-circle-two.png" width="660" height="534" loading="lazy" aria-hidden="true"
@@ -602,27 +622,27 @@
       serviceInstanceID: "6f9e3125-5d64-4ead-b3a9-64f27c9d1bb8", // The ID of your service instance.
       onLoad: async (instance) => {
         // Attach the chat window open action to the "CHAT NOW" button click
-        document.getElementById('start-chatbot').addEventListener('click', function(event) {
+        document.getElementById('start-chatbot').addEventListener('click', function (event) {
           event.preventDefault(); // Prevent default anchor behavior
           instance.openWindow();  // Open the chatbot window
         });
-        
+
         // Attach the chat window open action to the "Get Started" button click
-        document.getElementById('get-started').addEventListener('click', function(event) {
+        document.getElementById('get-started').addEventListener('click', function (event) {
           event.preventDefault(); // Prevent default anchor behavior
           instance.openWindow();  // Open the chatbot window
         });
-        
+
         // Optionally render the chat widget immediately or wait for user interaction
         await instance.render();
-      } 
+      }
     };
-  
+
     setTimeout(function () {
       const t = document.createElement('script');
-      t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + 
-              (window.watsonAssistantChatOptions.clientVersion || 'latest') + 
-              "/WatsonAssistantChatEntry.js";
+      t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" +
+        (window.watsonAssistantChatOptions.clientVersion || 'latest') +
+        "/WatsonAssistantChatEntry.js";
       document.head.appendChild(t);
     }, 0);
   </script>
