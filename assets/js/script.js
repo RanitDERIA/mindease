@@ -50,7 +50,6 @@ window.addEventListener("scroll", function () {
   }
 });
 
-
 const API_KEY = "8TUyZjI8OM2Ame57kssoR8vk9TVwu5dn5_7NoriHt83B";
 const scoring_url = "https://us-south.ml.cloud.ibm.com/ml/v4/deployments/7c160a90-5434-464f-b3b8-b7b84a758a34/predictions?version=2021-05-01";  // Replace with your scoring URL
 
@@ -68,6 +67,187 @@ function getToken() {
   };
   req.send("grant_type=urn:ibm:params:oauth:grant-type:apikey&apikey=" + API_KEY);
 }
+
+
+
+
+// Remedy:
+// Array of mental disorders with information
+const disorders = [
+  {
+      name: "Post-Traumatic Stress Disorder (PTSD)",
+      overview: "PTSD is a mental health condition triggered by a terrifying event.",
+      symptoms: ["Flashbacks", "Avoidance", "Negative changes in thinking and mood", "Hyperarousal"],
+      causes: ["Traumatic experiences", "Genetics", "Brain structure", "Life experience"],
+      whenToSee: "If you experience distressing symptoms lasting longer than a month.",
+      articles: [
+          { title: "Understanding PTSD", url: "#" },
+          { title: "PTSD Treatment Options", url: "#" }
+      ]
+  },
+  {
+      name: "Generalized Anxiety Disorder (GAD)",
+      overview: "GAD is characterized by excessive, uncontrollable worry about everyday things.",
+      symptoms: ["Restlessness", "Fatigue", "Difficulty concentrating", "Irritability"],
+      causes: ["Genetics", "Brain chemistry", "Environmental stressors"],
+      whenToSee: "If anxiety interferes with your daily life.",
+      articles: [
+          { title: "Managing GAD", url: "#" },
+          { title: "Coping Strategies for Anxiety", url: "#" }
+      ]
+  },
+  {
+      name: "Obsessive-Compulsive Disorder (OCD)",
+      overview: "OCD is a chronic condition characterized by obsessions and compulsions.",
+      symptoms: ["Obsessive thoughts", "Compulsive behaviors", "Avoidance"],
+      causes: ["Genetics", "Brain structure", "Life experiences"],
+      whenToSee: "If your obsessions and compulsions disrupt your daily life.",
+      articles: [
+          { title: "Living with OCD", url: "#" },
+          { title: "Treatment for OCD", url: "#" }
+      ]
+  },
+  {
+      name: "Bipolar Disorder",
+      overview: "Bipolar disorder causes extreme mood swings, including emotional highs and lows.",
+      symptoms: ["Manic episodes", "Depressive episodes", "Mood changes"],
+      causes: ["Genetics", "Neurochemical factors", "Environmental stressors"],
+      whenToSee: "If mood swings interfere with your relationships or work.",
+      articles: [
+          { title: "Understanding Bipolar Disorder", url: "#" },
+          { title: "Bipolar Disorder Treatment Options", url: "#" }
+      ]
+  },
+  {
+      name: "Depression",
+      overview: "Depression is a mood disorder that causes persistent feelings of sadness.",
+      symptoms: ["Feelings of hopelessness", "Loss of interest", "Fatigue", "Difficulty concentrating"],
+      causes: ["Genetics", "Biochemical factors", "Environmental stressors"],
+      whenToSee: "If you feel sad or lose interest in most activities.",
+      articles: [
+          { title: "Understanding Depression", url: "#" },
+          { title: "Depression Treatment Options", url: "#" }
+      ]
+  },
+  {
+      name: "Schizophrenia",
+      overview: "Schizophrenia is a severe mental disorder that affects how a person thinks, feels, and behaves.",
+      symptoms: ["Hallucinations", "Delusions", "Disorganized thinking"],
+      causes: ["Genetics", "Brain chemistry", "Environmental factors"],
+      whenToSee: "If you experience symptoms that disrupt your daily life.",
+      articles: [
+          { title: "Living with Schizophrenia", url: "#" },
+          { title: "Understanding Schizophrenia", url: "#" }
+      ]
+  },
+  {
+      name: "Social Anxiety Disorder",
+      overview: "Social anxiety disorder is characterized by intense fear of social situations.",
+      symptoms: ["Excessive self-consciousness", "Fear of judgment", "Avoidance of social situations"],
+      causes: ["Genetics", "Brain structure", "Environmental factors"],
+      whenToSee: "If fear of social situations disrupts your daily life.",
+      articles: [
+          { title: "Coping with Social Anxiety", url: "#" },
+          { title: "Understanding Social Anxiety Disorder", url: "#" }
+      ]
+  },
+  {
+      name: "Attention-Deficit/Hyperactivity Disorder (ADHD)",
+      overview: "ADHD is a neurodevelopmental disorder characterized by difficulty sustaining attention.",
+      symptoms: ["Inattention", "Hyperactivity", "Impulsivity"],
+      causes: ["Genetics", "Brain structure", "Environmental factors"],
+      whenToSee: "If symptoms interfere with daily life.",
+      articles: [
+          { title: "Understanding ADHD", url: "#" },
+          { title: "ADHD Management Strategies", url: "#" }
+      ]
+  },
+  {
+      name: "Borderline Personality Disorder (BPD)",
+      overview: "BPD is a mental disorder characterized by unstable moods, behavior, and relationships.",
+      symptoms: ["Intense emotions", "Fear of abandonment", "Impulsive behavior"],
+      causes: ["Genetics", "Brain structure", "Environmental factors"],
+      whenToSee: "If symptoms affect your relationships or self-image.",
+      articles: [
+          { title: "Understanding BPD", url: "#" },
+          { title: "Living with Borderline Personality Disorder", url: "#" }
+      ]
+  },
+  {
+      name: "Panic Disorder",
+      overview: "Panic disorder involves repeated episodes of intense fear or panic attacks.",
+      symptoms: ["Rapid heart rate", "Shortness of breath", "Dizziness", "Fear of losing control"],
+      causes: ["Genetics", "Brain chemistry", "Environmental stressors"],
+      whenToSee: "If panic attacks interfere with your daily life.",
+      articles: [
+          { title: "Understanding Panic Disorder", url: "#" },
+          { title: "Coping with Panic Attacks", url: "#" }
+      ]
+  },
+  {
+      name: "Seasonal Affective Disorder (SAD)",
+      overview: "SAD is a type of depression that occurs at a specific time of year, usually in winter.",
+      symptoms: ["Low energy", "Sleep issues", "Difficulty concentrating", "Changes in appetite"],
+      causes: ["Biochemical factors", "Genetics", "Environmental factors"],
+      whenToSee: "If seasonal changes affect your mood significantly.",
+      articles: [
+          { title: "Managing Seasonal Affective Disorder", url: "#" },
+          { title: "Understanding SAD", url: "#" }
+      ]
+  },
+  {
+      name: "Phobias",
+      overview: "Phobias are excessive and irrational fears of specific objects or situations.",
+      symptoms: ["Intense fear", "Avoidance behavior", "Physical symptoms (sweating, shaking)"],
+      causes: ["Genetics", "Traumatic experiences", "Learned behavior"],
+      whenToSee: "If phobias disrupt your daily life.",
+      articles: [
+          { title: "Understanding Phobias", url: "#" },
+          { title: "Coping with Phobias", url: "#" }
+      ]
+  }
+];
+
+// Hide the loader after 30 seconds
+setTimeout(() => {
+  const loader = document.getElementById('loader');
+  loader.style.display = 'none'; // Hide the loader
+
+  // Show content after another delay
+  setTimeout(() => {
+      const content = document.getElementById('content');
+      content.style.display = 'block'; // Show the content
+
+      // Pick a random disorder
+      const randomDisorder = disorders[Math.floor(Math.random() * disorders.length)];
+
+      // Display the disorder details
+      content.innerHTML = `
+          <h2>${randomDisorder.name}</h2>
+          <p><strong>Overview:</strong> ${randomDisorder.overview}</p>
+          <p><strong>Symptoms:</strong></p>
+          <ul>
+              ${randomDisorder.symptoms.map(symptom => `<li>${symptom}</li>`).join('')}
+          </ul>
+          <p><strong>Causes:</strong></p>
+          <ul>
+              ${randomDisorder.causes.map(cause => `<li>${cause}</li>`).join('')}
+          </ul>
+          <p><strong>When to See a Doctor:</strong> ${randomDisorder.whenToSee}</p>
+          <p><strong>Related Articles:</strong></p>
+          <ul>
+              ${randomDisorder.articles.map(article => `<li><a href="${article.url}">${article.title}</a></li>`).join('')}
+          </ul>
+      `;
+  }, 1000); // 1 second delay for displaying content after loader hides
+}, 49000); // 30 seconds delay for loader
+
+
+
+
+
+
+
 
 // Function to send data to the API
 function apiPost(token) {
@@ -95,13 +275,13 @@ function apiPost(token) {
         ],
         "values": [
           [
-            context.symptom_sleep, 
-            context.symptom_appetite, 
-            context.symptom_interest, 
+            context.symptom_sleep,
+            context.symptom_appetite,
+            context.symptom_interest,
             context.symptom_fatigue,
-            context.symptom_worthlessness, 
-            context.symptom_suicidal_ideation, 
-            context.symptom_aggression, 
+            context.symptom_worthlessness,
+            context.symptom_suicidal_ideation,
+            context.symptom_aggression,
             context.symptom_panic_attacks,
             context.symptom_hopelessness,
             "N/A", // Duration (if applicable)
