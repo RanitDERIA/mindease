@@ -81,8 +81,8 @@ const disorders = [
       causes: ["Traumatic experiences", "Genetics", "Brain structure", "Life experience"],
       whenToSee: "If you experience distressing symptoms lasting longer than a month.",
       articles: [
-          { title: "Understanding PTSD", url: "#" },
-          { title: "PTSD Treatment Options", url: "#" }
+          { title: "Understanding PTSD", url: "https://www.mayoclinic.org/diseases-conditions/post-traumatic-stress-disorder/symptoms-causes/syc-20355967" },
+          { title: "PTSD Treatment Options", url: "https://my.clevelandclinic.org/health/diseases/9545-post-traumatic-stress-disorder-ptsd" }
       ]
   },
   {
@@ -92,8 +92,8 @@ const disorders = [
       causes: ["Genetics", "Brain chemistry", "Environmental stressors"],
       whenToSee: "If anxiety interferes with your daily life.",
       articles: [
-          { title: "Managing GAD", url: "#" },
-          { title: "Coping Strategies for Anxiety", url: "#" }
+          { title: "Managing GAD", url: "https://www.mayoclinic.org/diseases-conditions/generalized-anxiety-disorder/symptoms-causes/syc-20360803" },
+          { title: "Coping Strategies for Anxiety", url: "https://my.clevelandclinic.org/health/diseases/23940-generalized-anxiety-disorder-gad" }
       ]
   },
   {
@@ -103,8 +103,8 @@ const disorders = [
       causes: ["Genetics", "Brain structure", "Life experiences"],
       whenToSee: "If your obsessions and compulsions disrupt your daily life.",
       articles: [
-          { title: "Living with OCD", url: "#" },
-          { title: "Treatment for OCD", url: "#" }
+          { title: "Living with OCD", url: "https://www.nimh.nih.gov/health/topics/obsessive-compulsive-disorder-ocd#:~:text=Obsessive%2Dcompulsive%20disorder%20(OCD),(compulsions)%2C%20or%20both." },
+          { title: "Treatment for OCD", url: "https://www.mayoclinic.org/diseases-conditions/obsessive-compulsive-disorder/symptoms-causes/syc-20354432" }
       ]
   },
   {
@@ -114,8 +114,8 @@ const disorders = [
       causes: ["Genetics", "Neurochemical factors", "Environmental stressors"],
       whenToSee: "If mood swings interfere with your relationships or work.",
       articles: [
-          { title: "Understanding Bipolar Disorder", url: "#" },
-          { title: "Bipolar Disorder Treatment Options", url: "#" }
+          { title: "Understanding Bipolar Disorder", url: "https://www.mayoclinic.org/diseases-conditions/bipolar-disorder/symptoms-causes/syc-20355955" },
+          { title: "Bipolar Disorder Treatment Options", url: "https://my.clevelandclinic.org/health/diseases/9294-bipolar-disorder" }
       ]
   },
   {
@@ -125,8 +125,8 @@ const disorders = [
       causes: ["Genetics", "Biochemical factors", "Environmental stressors"],
       whenToSee: "If you feel sad or lose interest in most activities.",
       articles: [
-          { title: "Understanding Depression", url: "#" },
-          { title: "Depression Treatment Options", url: "#" }
+          { title: "Understanding Depression", url: "https://www.psychiatry.org/patients-families/depression/what-is-depression" },
+          { title: "Depression Treatment Options", url: "https://www.who.int/news-room/fact-sheets/detail/depression" }
       ]
   },
   {
@@ -136,8 +136,8 @@ const disorders = [
       causes: ["Genetics", "Brain chemistry", "Environmental factors"],
       whenToSee: "If you experience symptoms that disrupt your daily life.",
       articles: [
-          { title: "Living with Schizophrenia", url: "#" },
-          { title: "Understanding Schizophrenia", url: "#" }
+          { title: "Living with Schizophrenia", url: "https://www.mayoclinic.org/diseases-conditions/schizophrenia/symptoms-causes/syc-20354443#:~:text=Schizophrenia%20is%20a%20serious%20mental,aren't%20observed%20by%20others." },
+          { title: "Understanding Schizophrenia", url: "https://www.psychiatry.org/patients-families/schizophrenia/what-is-schizophrenia" }
       ]
   },
   {
@@ -147,8 +147,8 @@ const disorders = [
       causes: ["Genetics", "Brain structure", "Environmental factors"],
       whenToSee: "If fear of social situations disrupts your daily life.",
       articles: [
-          { title: "Coping with Social Anxiety", url: "#" },
-          { title: "Understanding Social Anxiety Disorder", url: "#" }
+          { title: "Coping with Social Anxiety", url: "https://www.mayoclinic.org/diseases-conditions/social-anxiety-disorder/symptoms-causes/syc-20353561" },
+          { title: "Understanding Social Anxiety Disorder", url: "https://www.healthline.com/health/anxiety/social-phobia" }
       ]
   },
   {
@@ -158,8 +158,8 @@ const disorders = [
       causes: ["Genetics", "Brain structure", "Environmental factors"],
       whenToSee: "If symptoms interfere with daily life.",
       articles: [
-          { title: "Understanding ADHD", url: "#" },
-          { title: "ADHD Management Strategies", url: "#" }
+          { title: "Understanding ADHD", url: "https://www.nimh.nih.gov/health/topics/attention-deficit-hyperactivity-disorder-adhd#:~:text=Attention%2Ddeficit%2Fhyperactivity%20disorder%20(,interfere%20with%20functioning%20or%20development." },
+          { title: "ADHD Management Strategies", url: "https://www.mayoclinic.org/diseases-conditions/adhd/symptoms-causes/syc-20350889" }
       ]
   },
   {
@@ -169,8 +169,8 @@ const disorders = [
       causes: ["Genetics", "Brain structure", "Environmental factors"],
       whenToSee: "If symptoms affect your relationships or self-image.",
       articles: [
-          { title: "Understanding BPD", url: "#" },
-          { title: "Living with Borderline Personality Disorder", url: "#" }
+          { title: "Understanding BPD", url: "https://my.clevelandclinic.org/health/diseases/9762-borderline-personality-disorder-bpd#:~:text=Borderline%20personality%20disorder%20(BPD)%20is,the%20main%20treatment%20for%20BPD." },
+          { title: "Living with Borderline Personality Disorder", url: "https://www.mayoclinic.org/diseases-conditions/borderline-personality-disorder/symptoms-causes/syc-20370237" }
       ]
   },
   {
@@ -180,8 +180,8 @@ const disorders = [
       causes: ["Genetics", "Brain chemistry", "Environmental stressors"],
       whenToSee: "If panic attacks interfere with your daily life.",
       articles: [
-          { title: "Understanding Panic Disorder", url: "#" },
-          { title: "Coping with Panic Attacks", url: "#" }
+          { title: "Understanding Panic Disorder", url: "https://www.mayoclinic.org/diseases-conditions/panic-attacks/symptoms-causes/syc-20376021" },
+          { title: "Coping with Panic Attacks", url: "https://medlineplus.gov/panicdisorder.html" }
       ]
   },
   {
@@ -191,8 +191,8 @@ const disorders = [
       causes: ["Biochemical factors", "Genetics", "Environmental factors"],
       whenToSee: "If seasonal changes affect your mood significantly.",
       articles: [
-          { title: "Managing Seasonal Affective Disorder", url: "#" },
-          { title: "Understanding SAD", url: "#" }
+          { title: "Managing Seasonal Affective Disorder", url: "https://www.mayoclinic.org/diseases-conditions/seasonal-affective-disorder/symptoms-causes/syc-20364651" },
+          { title: "Understanding SAD", url: "https://my.clevelandclinic.org/health/diseases/9293-seasonal-depression" }
       ]
   },
   {
@@ -202,8 +202,8 @@ const disorders = [
       causes: ["Genetics", "Traumatic experiences", "Learned behavior"],
       whenToSee: "If phobias disrupt your daily life.",
       articles: [
-          { title: "Understanding Phobias", url: "#" },
-          { title: "Coping with Phobias", url: "#" }
+          { title: "Understanding Phobias", url: "https://www.medicalnewstoday.com/articles/249347" },
+          { title: "Coping with Phobias", url: "https://www.hopkinsmedicine.org/health/conditions-and-diseases/phobias" }
       ]
   }
 ];
