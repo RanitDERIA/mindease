@@ -862,6 +862,76 @@ body {
 
 
 
+
+
+
+
+
+
+
+/* Remedy */
+/* Loader CSS */
+.loader {
+  border: 8px solid #f3f3f3; /* Light grey */
+  border-top: 8px solid var(--coquelicot); /* Red */
+  border-radius: 50%;
+  width: 60px; /* Size of the loader */
+  height: 60px; /* Size of the loader */
+  animation: spin 1s linear infinite; /* Spin animation */
+  margin: 20px auto; /* Center the loader */
+}
+
+/* Keyframes for spin animation */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.content {
+  display: none; /* Hide content initially */
+  color: white; /* Text color */
+  margin-top: 40px; /* Space below Remedy */
+  text-align: left; /* Align text to the left */
+  padding: 20px; /* Padding for better spacing */
+  max-width: 800px; /* Max width for better readability */
+  margin-left: 2rem; /* Center content */
+  margin-right: auto; /* Center content */
+}
+
+.content h2, .content h3 {
+  margin-bottom: 15px; /* Space below headings */
+}
+
+.content p {
+  margin-bottom: 10px; /* Space between paragraphs */
+}
+
+ul {
+  margin-left: 20px; /* Indent the bullet list */
+}
+
+a {
+  color: var(--coquelicot); /* Link color */
+  text-decoration: none; /* Remove underline */
+}
+
+a:hover {
+  text-decoration: underline; /* Underline on hover */
+}
+
+.hereby {
+  padding-left: 1rem;
+}
+
+
+
+
+
+
+
+
+
+
 /*-----------------------------------*\
   #BACK TO TOP
 \*-----------------------------------*/
@@ -1316,7 +1386,6 @@ body {
    */
 
   .about .wrapper { gap: 40px; }
-
 
 
   /**
