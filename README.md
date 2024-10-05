@@ -2,7 +2,8 @@
   
   ![GitHub repo size](https://img.shields.io/badge/repo_size-20_MB-indigo)
   ![GitHub stars](https://img.shields.io/github/stars/ranitderia/mindease?style=social)
-  ![GitHub forks](https://img.shields.io/github/forks/ranitderia/mindease?style=social)
+  [![GitHub forks](https://img.shields.io/github/forks/RanitDERIA/mindease?style=social)](https://github.com/RanitDERIA/mindease/network/members)
+forks/ranitderia/mindease?style=social)
   [![Twitter Follow](https://img.shields.io/twitter/follow/DeriaRanit?style=social)](https://twitter.com/intent/follow?screen_name=DeriaRanit)
   [![Twitter Follow](https://img.shields.io/twitter/follow/me0Prabhat?style=social)](https://x.com/me0Prabhat)
 
