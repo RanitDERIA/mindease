@@ -85,19 +85,18 @@ export default function ChatInterface() {
     }; 
 
     return (
-        <div className="flex flex-col h-[calc(100vh-64px)]">
+        // Changed 100vh to 100dvh for mobile browsers to handle address bar resizing correctly
+        <div className="flex flex-col h-[calc(100dvh-64px)]">
             {/* Sentiment Bar */}
-            <div className="h-2 bg-gray-800 w-full">
+            <div className="h-1.5 md:h-2 bg-gray-800 w-full">
                 <motion.div
-                    // FIXED: Added backticks around the template literal
                     animate={{ width: `${sentiment}%` }}
-                    // FIXED: Added backticks and fixed h-full class
                     className={`h-full ${getSentimentColor()} transition-colors duration-500`}
                 />
             </div>  
 
             {/* Messages */}
-            <div className="flex-1 overflow-y-auto p-4 space-y-4">
+            <div className="flex-1 overflow-y-auto p-3 md:p-4 space-y-4">
                 <AnimatePresence>
                     {messages.map((message, index) => (
                         <motion.div
@@ -105,12 +104,12 @@ export default function ChatInterface() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             exit={{ opacity: 0 }}
-                            className={`flex gap-3 ${message.role === 'user' ? 'flex-row-reverse' : ''}`}
+                            className={`flex gap-2 md:gap-3 ${message.role === 'user' ? 'flex-row-reverse' : ''}`}
                         >
-                            <div className={`w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0 ${message.role === 'user' ? 'bg-brand-primary' : 'bg-purple-500'}`}>
-                                {message.role === 'user' ? <User className="w-5 h-5" /> : <Brain className="w-5 h-5" />}
+                            <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0 ${message.role === 'user' ? 'bg-brand-primary' : 'bg-purple-500'}`}>
+                                {message.role === 'user' ? <User className="w-4 h-4 md:w-5 md:h-5" /> : <Brain className="w-4 h-4 md:w-5 md:h-5" />}
                             </div>
-                            <div className={`max-w-[70%] rounded-2xl p-4 ${message.role === 'user' ? 'bg-brand-primary text-white' : 'glass-effect'}`}>
+                            <div className={`max-w-[85%] md:max-w-[70%] rounded-2xl p-3 md:p-4 text-sm md:text-base ${message.role === 'user' ? 'bg-brand-primary text-white' : 'glass-effect'}`}>
                                 <p className="whitespace-pre-wrap">{message.content}</p>
                             </div>
                         </motion.div>
@@ -118,12 +117,12 @@ export default function ChatInterface() {
                 </AnimatePresence> 
                 
                 {loading && (
-                    <div className="flex gap-3">
-                        <div className="w-10 h-10 rounded-full bg-purple-500 flex items-center justify-center">
-                            <Brain className="w-5 h-5" />
+                    <div className="flex gap-2 md:gap-3">
+                        <div className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-purple-500 flex items-center justify-center">
+                            <Brain className="w-4 h-4 md:w-5 md:h-5" />
                         </div>
-                        <div className="glass-effect rounded-2xl p-4">
-                            <Loader2 className="w-5 h-5 animate-spin" />
+                        <div className="glass-effect rounded-2xl p-3 md:p-4">
+                            <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" />
                         </div>
                     </div>
                 )}
@@ -131,32 +130,32 @@ export default function ChatInterface() {
             </div> 
             
             {/* Input */}
-            <div className="border-t border-white/10 p-4 glass-effect">
+            <div className="border-t border-white/10 p-3 md:p-4 glass-effect">
                 <form onSubmit={handleSubmit} className="max-w-4xl mx-auto flex gap-2">
                     <input
                         type="text"
                         value={isListening ? transcript : input}
                         onChange={(e) => setInput(e.target.value)}
-                        placeholder="Type your message or use voice..."
-                        className="flex-1 px-4 py-3 bg-brand-card border border-gray-700 rounded-xl focus:outline-none focus:border-brand-primary"
+                        placeholder="Type message..."
+                        className="flex-1 px-3 py-2 md:px-4 md:py-3 bg-brand-card border border-gray-700 rounded-xl focus:outline-none focus:border-brand-primary text-sm md:text-base"
                         disabled={loading || isListening}
                     />
                     <button
                         type="button"
                         onClick={handleVoiceToggle}
-                        className={`px-4 py-3 rounded-xl transition-colors ${isListening ? 'bg-red-600 hover:bg-red-700 animate-pulse' : 'bg-gray-700 hover:bg-gray-600'}`}
+                        className={`px-3 py-2 md:px-4 md:py-3 rounded-xl transition-colors flex items-center justify-center ${isListening ? 'bg-red-600 hover:bg-red-700 animate-pulse' : 'bg-gray-700 hover:bg-gray-600'}`}
                     >
                         {isListening ? '🔴' : '🎤'}
                     </button>
                     <button
                         type="submit"
                         disabled={loading || (!input.trim() && !transcript)}
-                        className="px-6 py-3 bg-brand-primary hover:bg-orange-600 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                        className="px-4 py-2 md:px-6 md:py-3 bg-brand-primary hover:bg-orange-600 rounded-xl transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
                     >
-                        {loading ? <Loader2 className="w-5 h-5 animate-spin" /> : <Send className="w-5 h-5" />}
+                        {loading ? <Loader2 className="w-4 h-4 md:w-5 md:h-5 animate-spin" /> : <Send className="w-4 h-4 md:w-5 md:h-5" />}
                     </button>
                 </form>
-                {error && <p className="text-red-500 text-sm mt-2 text-center">{error}</p>}
+                {error && <p className="text-red-500 text-xs md:text-sm mt-2 text-center">{error}</p>}
             </div>
         </div>
     );
