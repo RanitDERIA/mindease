@@ -1,7 +1,7 @@
 'use client'; 
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, Loader2, Brain, User } from 'lucide-react';
+import { Send, Loader2, Brain, User, Phone, AlertTriangle } from 'lucide-react';
 import { useSpeechRecognition } from '../hooks/useSpeechRecognition';
 
 interface Message {
@@ -9,6 +9,51 @@ interface Message {
     content: string;
     sentiment?: number;
 }
+
+const CrisisMessage = () => (
+    <div className="w-full max-w-[85%] md:max-w-[70%] bg-red-500/10 border border-red-500/30 rounded-2xl p-4 md:p-5">
+        <div className="flex items-center gap-3 mb-3 text-red-500">
+            <AlertTriangle className="w-6 h-6" />
+            <h3 className="font-bold text-lg">Crisis Support Resources</h3>
+        </div>
+        
+        <p className="text-gray-200 mb-4 whitespace-pre-wrap text-sm md:text-base">
+            I'm very concerned about what you're sharing. Please contact a crisis professional immediately. I care about your safety, but I'm not equipped to handle crisis situations.
+        </p>
+
+        <div className="space-y-3">
+            <a href="tel:14416" className="flex items-center gap-3 p-3 bg-red-500/20 hover:bg-red-500/30 border border-red-500/30 rounded-xl transition-all group">
+                <div className="w-10 h-10 rounded-full bg-red-500 flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                    <div className="font-bold text-white group-hover:text-red-300 transition-colors">Call 14416</div>
+                    <div className="text-xs text-gray-300">Tele-MANAS (24/7 Govt of India Helpline)</div>
+                </div>
+            </a>
+
+            <a href="https://wa.me/919999666555" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 p-3 bg-green-500/10 hover:bg-green-500/20 border border-green-500/30 rounded-xl transition-all group">
+                <div className="w-10 h-10 rounded-full bg-green-600 flex items-center justify-center shrink-0">
+                    <Phone className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                    <div className="font-bold text-white group-hover:text-green-300 transition-colors">WhatsApp +91 9999 666 555</div>
+                    <div className="text-xs text-gray-300">Vandrevala Foundation</div>
+                </div>
+            </a>
+
+            <a href="tel:112" className="flex items-center gap-3 p-3 bg-red-600/20 hover:bg-red-600/30 border border-red-500/30 rounded-xl transition-all group">
+                <div className="w-10 h-10 rounded-full bg-red-600 flex items-center justify-center shrink-0">
+                    <AlertTriangle className="w-5 h-5 text-white" />
+                </div>
+                <div>
+                    <div className="font-bold text-white group-hover:text-red-300 transition-colors">Call 112</div>
+                    <div className="text-xs text-gray-300">Emergency Services</div>
+                </div>
+            </a>
+        </div>
+    </div>
+);
 
 export default function ChatInterface() {
     const [messages, setMessages] = useState<Message[]>([
@@ -84,6 +129,11 @@ export default function ChatInterface() {
         return 'bg-green-500';
     }; 
 
+    // Helper to check if a message is a crisis response
+    const isCrisisMessage = (content: string) => {
+        return content.includes('14416') && (content.includes('Tele-MANAS') || content.includes('Govt of India Helpline'));
+    };
+
     return (
         // Changed 100vh to 100dvh for mobile browsers to handle address bar resizing correctly
         <div className="flex flex-col h-[calc(100dvh-64px)]">
@@ -109,9 +159,14 @@ export default function ChatInterface() {
                             <div className={`w-8 h-8 md:w-10 md:h-10 rounded-full flex items-center justify-center flex-shrink-0 ${message.role === 'user' ? 'bg-brand-primary' : 'bg-purple-500'}`}>
                                 {message.role === 'user' ? <User className="w-4 h-4 md:w-5 md:h-5" /> : <Brain className="w-4 h-4 md:w-5 md:h-5" />}
                             </div>
-                            <div className={`max-w-[85%] md:max-w-[70%] rounded-2xl p-3 md:p-4 text-sm md:text-base ${message.role === 'user' ? 'bg-brand-primary text-white' : 'glass-effect'}`}>
-                                <p className="whitespace-pre-wrap">{message.content}</p>
-                            </div>
+                            
+                            {message.role === 'assistant' && isCrisisMessage(message.content) ? (
+                                <CrisisMessage />
+                            ) : (
+                                <div className={`max-w-[85%] md:max-w-[70%] rounded-2xl p-3 md:p-4 text-sm md:text-base ${message.role === 'user' ? 'bg-brand-primary text-white' : 'glass-effect'}`}>
+                                    <p className="whitespace-pre-wrap">{message.content}</p>
+                                </div>
+                            )}
                         </motion.div>
                     ))}
                 </AnimatePresence> 

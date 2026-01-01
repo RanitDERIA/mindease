@@ -82,7 +82,7 @@ Remember: You're a supportive friend, not a therapist. When in doubt, recommend 
     });
 
     const result = completion.choices[0]?.message?.content || '{}';
-    
+
     // Try to parse JSON, fallback to text response
     let parsed;
     try {
@@ -98,10 +98,10 @@ Remember: You're a supportive friend, not a therapist. When in doubt, recommend 
     return NextResponse.json(parsed);
   } catch (error: any) {
     console.error('Groq API Error:', error);
-    
+
     return NextResponse.json(
-      { 
-        response: error.message?.includes('rate_limit') 
+      {
+        response: error.message?.includes('rate_limit')
           ? 'I apologize, but I need a moment. Please try again in a few seconds.'
           : 'I apologize, but I encountered an error. Please try again.',
         sentiment_score: 50,
